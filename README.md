@@ -62,6 +62,21 @@ You will also notice that we're using a .js file for our styles, which has been 
 
 ![screenshot.png](screenshot.png)
 
+## Workflow - getting updates
+
+* In GitHub, copy the clone url of the class version of this repository.  Back in your Terminal, navigate to your local repository for this project. Run the following command (paste in the class repo clone url instead of typing `CLASS_REPO_CLONE_URL`):
+
+    ```sh
+    git remote add upstream CLASS_REPO_CLONE_URL
+    ```
+
+* In the future, if the class version of a branch gets updated, you can pull these updates directly from the `upstream` remote.  Try this now with the master branch:
+
+    ```sh
+    git checkout master
+    git pull upstream master
+    ```
+
 ## Sprints
 
 #### Sprint 1
