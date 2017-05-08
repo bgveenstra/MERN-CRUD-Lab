@@ -72,6 +72,7 @@ class CommentBox extends Component {
   render() {
     return (
       <div style={ style.commentBox }>
+        <a href="http://localhost:4000/auth/google">Sign In with Google</a>
         <h2 style={ style.title}>Comments:</h2>
       <CommentList
         onCommentDelete={ this.handleCommentDelete }
