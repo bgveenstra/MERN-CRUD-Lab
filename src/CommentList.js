@@ -4,6 +4,7 @@ import style from './style';
 
 class CommentList extends Component {
   render() {
+    console.log('comment list data', this.props.data)
     let commentNodes = this.props.data.map(comment => {
       return (
         <Comment

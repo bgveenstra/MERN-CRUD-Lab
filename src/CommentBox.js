@@ -7,7 +7,7 @@ import style from './style';
 class CommentBox extends Component {
   constructor(props) {
     super(props);
-    this.state = {data: [] };
+    this.state = { data: [] };
     this.loadCommentsFromServer = this.loadCommentsFromServer.bind(this);
     this.handleCommentSubmit = this.handleCommentSubmit.bind(this);
     this.handleCommentUpdate = this.handleCommentUpdate.bind(this);
@@ -19,22 +19,24 @@ class CommentBox extends Component {
       url: this.props.url
     })
     .then(res => {
-      this.setState({ data: res.data.comments });
+      console.log('response for comments from server', res);
+      this.setState({ data: res  });
     })
   }
   handleCommentSubmit(comment) {
-    console.log(comment);
+    console.log('handling comment submit with input', comment);
     let comments = this.state.data;
-    comment.id = Date.now();
-    let newComments = comments.concat([comment]);
-    this.setState({data: newComments});
+    // comment.id = Date.now();
+    // let newComments = comments.concat([comment]);
+    // this.setState({data: newComments});
     $.ajax({
       method: 'POST',
       url: this.props.url,
       data: comment
     })
     .then(res => {
-      console.log(res);
+      console.log('sucessful comment submit response', res);
+      this.setState({ data: comments.push(res) })
     }, err => {
       console.error(err);
       this.setState({ data: comments });

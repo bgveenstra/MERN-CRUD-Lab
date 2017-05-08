@@ -41,7 +41,7 @@ class Comment extends Component {
     e.preventDefault();
     let id = this.props.uniqueID;
     this.props.onCommentDelete(id);
-    console.log('oops deleted');
+    console.log('clicked to delete comment', id);
   }
   handleTextChange(e) {
     this.setState({ text: e.target.value });
